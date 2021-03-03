@@ -1,0 +1,55 @@
+.nav-container {
+
+  @apply container mx-auto lg:px-40 px-10 py-2;
+
+}
+.navigation {
+
+  @apply md:flex justify-between items-center;
+  @extend .nav-container;
+
+  &__logo {
+
+    @apply font-mono font-extrabold text-2xl text-purple-600 tracking-wider cursor-pointer py-8;
+
+  }
+  &__search {
+
+    @apply py-4;
+     
+    &__input {
+       
+      @apply border-0 border-b-2 border-purple-600 py-2 w-full md:w-max;
+      
+      &:focus {
+
+        @apply outline-purple;
+
+      }
+
+    }
+
+  }
+
+  &__menu {
+
+    @extend .nav-container;
+    @apply grid justify-between;
+    grid-template-columns: repeat(4, max-content);
+
+    @media (min-width: 768px) { 
+      grid-template-columns: repeat(8, max-content);
+    }
+
+    &__item {
+      @apply py-4;
+
+      a.router-link-exact-active {
+        color: rgba(124, 58, 237, 1);
+      }
+
+    }
+
+  }
+
+}

@@ -520,6 +520,7 @@ module.exports = {
       none: ['2px solid transparent', '2px'],
       white: ['2px dotted white', '2px'],
       black: ['2px dotted black', '2px'],
+      purple: ['2px dotted #7c3aed', '2px'],
     },
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
