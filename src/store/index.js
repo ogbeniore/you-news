@@ -79,7 +79,8 @@ export default new Vuex.Store({
       const baseUrl = process.env.VUE_APP_NEWS_BASE_URL;
       const apiKey = process.env.VUE_APP_NEWS_KEY;
       const country = state.country.short_name.toLowerCase() || 'ng';
-      const fullApiUrl = `${baseUrl}top-headlines?apiKey=${apiKey}&category=${category}&sources=${source}&q=${query}&pageSize=5&page=${page}&country=${source ? '' : country}`;
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const fullApiUrl = `${proxyUrl}${baseUrl}top-headlines?apiKey=${apiKey}&category=${category}&sources=${source}&q=${query}&pageSize=5&page=${page}&country=${source ? '' : country}`;
       fetch(fullApiUrl).then((response) => response.json())
         .then(({ articles, totalResults }) => {
           commit('setTopHeadlines', articles);
