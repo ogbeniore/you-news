@@ -79,7 +79,7 @@ export default new Vuex.Store({
       const baseUrl = process.env.VUE_APP_NEWS_BASE_URL;
       const apiKey = process.env.VUE_APP_NEWS_KEY;
       const country = state.country.short_name.toLowerCase() || 'ng';
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const proxyUrl = 'https://anyy-cors.herokuapp.com/';
       const fullApiUrl = `${proxyUrl + baseUrl}top-headlines?apiKey=${apiKey}&category=${category}&sources=${source}&q=${query}&pageSize=5&page=${page}&country=${source ? '' : country}`;
       fetch(fullApiUrl).then((response) => response.json())
         .then(({ articles, totalResults }) => {
@@ -92,7 +92,8 @@ export default new Vuex.Store({
       const { category = '' } = payload;
       const baseUrl = process.env.VUE_APP_NEWS_BASE_URL;
       const apiKey = process.env.VUE_APP_NEWS_KEY;
-      const fullApiUrl = `${baseUrl}sources?apiKey=${apiKey}&category=${category}`;
+      const proxyUrl = 'https://anyy-cors.herokuapp.com/';
+      const fullApiUrl = `${proxyUrl + baseUrl}sources?apiKey=${apiKey}&category=${category}`;
       fetch(fullApiUrl).then((response) => response.json())
         .then(({ sources }) => {
           commit('setSources', sources);
