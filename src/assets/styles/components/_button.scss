@@ -1,0 +1,12 @@
+.btn {
+  @apply px-4 py-2 rounded text-sm border border-purple-600 my-1 cursor-pointer;
+  &-primary {
+    @apply bg-purple-600 text-white;
+  }
+  &-primary-outline {
+    @apply bg-white text-purple-600;
+  }
+  &:focus {
+    @apply outline-purple;
+  }
+}
